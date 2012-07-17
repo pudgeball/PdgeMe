@@ -19,14 +19,18 @@ helpers do
   
   def size
     startRedis
-    @redis.dbsize
+    @size = @redis.dbsize
     cleanup
+    
+    return @size
   end
   
   def getURL
     startRedis
-    @redis.get "links:#{params[:shortcode]}"
+    @url = @redis.get "links:#{params[:shortcode]}"
     cleanup
+    
+    return @url
   end
   
   def setURL(url)
