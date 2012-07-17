@@ -22,6 +22,9 @@
 	  form {
 	    display:block;
 	    width:400px;
+	    overflow: hidden;
+	    border-bottom: 2px solid;
+	    padding-bottom: 12px;
 	  }
 	  input {
 	    display:block;
@@ -42,16 +45,9 @@
 	  #submit:hover {
 	    background:#ff7866;
 	  }
-	  .clear {
-	    height:1px;
-	    width:400px;
-	    clear:both;
-	  }
 	  .result {
 	    clear:both;
 	    width:400px;
-	    margin-top:12px;
-	    border-top:2px solid #ff4b33;
 	    padding-top:12px;
 	    text-align:center;
 	  }
@@ -72,12 +68,10 @@
 	      <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
 	      <input type="submit" value="shorten" id="submit" />
 	    </form>
-	    <div class="clear"></div>
 	    <% if @shortcode %>
-	    <div class="result">
-	      Your shortened URL is:
-	      <a href="http://www.pdge.me/<%= @shortcode %>">http://www.pdge.me/<%= @shortcode %></a>
-	    </div>
+	      <div class="result">
+	        Your shortened URL is: <a href="http://www.pdge.me/<%= @shortcode %>">http://www.pdge.me/<%= @shortcode %></a>
+	      </div>
 	    <% end %>
 	  </div>
 	</body>
