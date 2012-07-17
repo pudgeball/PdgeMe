@@ -4,7 +4,7 @@
 	  <title>pdge.me</title>
 	  <style>
 	  body {
-	    font-family:"Gill Sans", "Gill Sans MT", Sans-Serif;
+	    font-family:"Helvetica", Sans-Serif;
 	  }
 	  .container {
 	    width:400px;
@@ -28,12 +28,12 @@
 	  }
 	  input {
 	    display:block;
-	    float:left;
 	    padding:8px;
 	    font-size:16px;
+	    margin: 0 auto 0 auto;
 	  }
 	  #url {
-	    width:280px;
+	    width:90%;
 	    margin-right:12px;
 	  }
 	  #submit {
@@ -66,7 +66,6 @@
 	    <h1>pdge.me</h1>
 	    <form method="post">
 	      <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
-	      <input type="submit" value="shorten" id="submit" />
 	    </form>
 	    <% if @shortcode %>
 	      <div class="result">
