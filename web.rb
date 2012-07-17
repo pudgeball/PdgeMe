@@ -3,7 +3,7 @@ require 'redis'
 
 
 uri = URI.parse('redis://nickmcguire:3cd38c7b1847ae2e35cdcb878c22b063@chubb.redistogo.com:9261/')
-redis = Redis.new(:host => "localhost", :port => '6789')
+redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
 
 helpers do
   include Rack::Utils
