@@ -18,6 +18,11 @@ helpers do
     @redis.dbsize
   end
   
+  def getURL
+    startRedis
+    @redis.get "links:#{params[:shortcode]}"
+  end
+  
   def setURL(url)
     startRedis
     @shortcode = random_string(5)
@@ -41,7 +46,5 @@ post '/' do
 end
 
 get '/:shortcode' do
-  startRedis()
-  @url = redis.get "links:#{params[:shortcode]}"
-  redirect @url || '/', 301
+  redirect getURL || '/', 301
 end
