@@ -14,10 +14,10 @@
 	    width:400px;
 	    margin-bottom:12px;
 	    text-align:center;
-	    color:#ff4b33;
+	    color:red;
 	    font-size:40px;
 	    padding-bottom:8px;
-	    border-bottom:2px solid #ff4b33;
+	    border-bottom:2px solid black;
 	  }
 	  form {
 	    display:block;
@@ -36,7 +36,7 @@
 	  #submit {
 	    width:88px;
 	    border:none;
-	    background:#ff4b33;
+	    background:red;
 	    padding:10px;
 	  }
 	  #submit:hover {
@@ -67,7 +67,7 @@
 	</head>
 	<body>
 	  <div class="container">
-	    <h1>shortlink app</h1>
+	    <h1>pdge.me</h1>
 	    <form method="post">
 	      <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
 	      <input type="submit" value="shorten" id="submit" />
@@ -76,7 +76,7 @@
 	    <% if @shortcode %>
 	    <div class="result">
 	      Your shortened URL is:
-	      <a href="http://localhost:4567/<%= @shortcode %>">http://my-shortlink-app.com/<%= @shortcode %></a>
+	      <a href="http://www.pdge.me/<%= @shortcode %>">http://www.pdge.me/<%= @shortcode %></a>
 	    </div>
 	    <% end %>
 	  </div>
