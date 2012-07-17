@@ -12,7 +12,7 @@
 	  }
 	  h1 {
 	    width:400px;
-	    margin-bottom:12px;
+	    margin:0;
 	    text-align:center;
 	    color:red;
 	    font-size:40px;
@@ -23,8 +23,7 @@
 	    display:block;
 	    width:400px;
 	    overflow: hidden;
-	    border-bottom: 2px solid;
-	    padding-bottom: 12px;
+	    padding-top: 1.0em;
 	  }
 	  input {
 	    display:block;
@@ -36,15 +35,22 @@
 	    width:90%;
 	    margin-right:12px;
 	  }
-	  #submit {
-	    width:88px;
-	    border:none;
-	    background:red;
-	    padding:10px;
+	  .total {
+  	  text-transform: uppercase;
+  	  text-align: center;
+  	  color: red;
+  	  font-size: 1.0em;
+  	  font-weight: bold;
+  	  border-bottom: 2px solid black;
+  	  padding: 1.0em;
 	  }
-	  #submit:hover {
-	    background:#ff7866;
+	  .total p {
+  	  margin: 0;
 	  }
+	  .total em {
+	    color: black;
+	    font-style: normal;
+    }
 	  .result {
 	    clear:both;
 	    width:400px;
@@ -67,6 +73,9 @@
 	    <form method="post">
 	      <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
 	    </form>
+	    <div class="total">
+	      <p>Total Shortened: <em><%= size %></em></p>
+	    </div>
 	    <% if @shortcode %>
 	      <div class="result">
 	        Your shortened URL is: <a href="http://www.pdge.me/<%= @shortcode %>">http://www.pdge.me/<%= @shortcode %></a>
