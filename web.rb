@@ -13,20 +13,27 @@ helpers do
     @redis = Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
   end
   
+  def cleanup
+    @redis.quit
+  end
+  
   def size
     startRedis
     @redis.dbsize
+    cleanup
   end
   
   def getURL
     startRedis
     @redis.get "links:#{params[:shortcode]}"
+    cleanup
   end
   
   def setURL(url)
     startRedis
     @shortcode = random_string(5)
     @redis.setnx "links:#{@shortcode}", url
+    cleanup
   end
   
   def random_string(length)
